@@ -5,7 +5,7 @@ license: Apache-2.0
 compatibility: Requires git and GitHub CLI (gh). Best with an authenticated gh session and a cloned GitHub repository.
 metadata:
   version: "1.0.0"
-  owner: "madflojo"
+  author: "Benjamin Cane"
   repository: "fun-pull-requests"
   tags:
     - github
