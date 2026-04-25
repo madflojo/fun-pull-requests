@@ -16,6 +16,9 @@ The canonical skill identifier is `fun-pull-requests`. The repository is
 structured so it can be installed directly with GitHub CLI or copied manually
 into an agent skill directory.
 
+The goal is straightforward: produce PRs that are operationally reliable,
+reviewer-friendly, and just a little more alive than stock boilerplate.
+
 ## Repository layout
 
 ```text
@@ -43,8 +46,18 @@ gh skill install madflojo/fun-pull-requests@<commit-sha>
 
 Fallback path: manually copy `skills/fun-pull-requests/` into either:
 
-- `.agents/skills/`
-- `~/.agents/skills/`
+- `.agents/skills/` in a repository
+- `~/.agents/skills/` for a user-level install
+
+## Compatibility notes
+
+This skill assumes:
+
+- `git` is installed
+- GitHub CLI (`gh`) is installed
+- the current directory is inside a cloned git repository
+- `gh auth status` can identify a usable GitHub account when the user wants to
+  publish a PR
 
 ## What the skill does
 
@@ -60,7 +73,30 @@ reliable, not just cheerful. It teaches the agent to:
 
 ## Example output
 
-This is the kind of PR output the skill should generate:
+These are the kinds of PR titles and summaries this skill should generate.
+
+Lighter-touch titles can carry a small contextual wink:
+
+- `docs: add gh skill install guidance without the side quest 🗺️`
+- `refactor(ci): trim release wiring before it grows a second head`
+- `docs: tune PR copy so release notes keep their tie on`
+
+For more serious changes, the title should stay fully straight:
+
+- `fix(auth): handle expired token refresh before retries`
+- `fix(api): preserve webhook signature verification on retries`
+- `security: rotate leaked development credentials`
+
+That same balance applies to the summary section in the body:
+
+- `Document the new install flow so readers can get to the good part without`
+  `spelunking through setup docs.`
+- `Tighten the release steps so future updates feel more like a routine and`
+  `less like archaeology.`
+- `Replace exposed credentials and close the window before it becomes a`
+  `skylight.`
+
+For a full PR body, the output should still stay structured and reviewer-first:
 
 Title:
 
@@ -86,6 +122,9 @@ so readers can get to the good part without spelunking through setup docs.
 ## Risks
 - none noted
 ```
+
+When the change is riskier or more sensitive, the humor should fade into the
+background or disappear entirely.
 
 ## Contributing
 

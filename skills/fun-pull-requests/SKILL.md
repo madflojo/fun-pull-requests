@@ -1,10 +1,14 @@
 ---
 name: fun-pull-requests
-description: Prepare and publish a polished GitHub pull request with clear review context, a light touch of personality, and reliable gh-based workflows. Use when the user asks to open a PR, prepare PR title/body, or publish the current branch.
+description: >-
+  Prepares and publishes a polished GitHub pull request with `gh`, including
+  PR title and body drafting, branch review summaries, draft-vs-ready
+  guidance, and `gh pr create` workflows. Use when the task involves opening,
+  drafting, publishing, or summarizing a GitHub pull request for the current
+  branch.
 license: Apache-2.0
 compatibility: Requires git and GitHub CLI (gh). Best with an authenticated gh session and a cloned GitHub repository.
 metadata:
-  version: "1.0.0"
   author: "Benjamin Cane"
   repository: "fun-pull-requests"
   tags:
@@ -20,6 +24,10 @@ Prepare the current branch for review and open a polished GitHub pull request
 with `gh`. The result should be concrete, accurate, and easy for reviewers to
 scan, with a little personality where it helps and none where it hurts.
 
+Add a little bit of contextual humor to the PR, not much, just enough that a
+reviewer might crack a small smile while the title and summary stay relevant
+and professional.
+
 Use this skill when the user wants to:
 
 - open or publish a pull request
@@ -30,12 +38,12 @@ Use this skill when the user wants to:
 ## Working Style
 
 - Be accurate before being playful. The PR should stay professional and factual.
-- Keep tone concise and human. Every PR should include a small amount of
-  contextual humor, but the humor must stay subordinate to the technical
-  content.
+- Keep tone concise and human. Add a small amount of contextual humor, but keep
+  it subordinate to the technical content.
 - Review the branch state before proposing a title or body.
 - Do not assume upstreams, remotes, auth, or default branches are configured.
-- Prefer `gh` for repository and PR operations. Fall back to raw git only when
+- Scope tool use to repo-local `git` inspection and `gh` PR operations. Prefer
+  `gh` for repository and PR operations, and fall back to raw git only when
   that improves reliability or when `gh` cannot provide the needed detail.
 
 ## Preflight
@@ -231,8 +239,9 @@ Avoid `/tmp` if the environment may be sandboxed or ephemeral.
 - Prefer conventional-commit-style titles such as `feat:`, `fix:`, `docs:`, or
   `refactor:`.
 - Keep titles short, concrete, and reviewer-oriented.
-- Include a small contextual wink in every PR title or summary, but make sure
-  the title still reads well in release notes and GitHub history.
+- Add a little bit of contextual humor to the PR title or summary, not much,
+  just enough that it feels human while still reading cleanly in release notes
+  and GitHub history.
 - When the change is low-risk, docs-focused, or otherwise light in tone, the
   humorous touch can be more visible.
 - Body content should explain outcome, notable changes, validation status, and
@@ -240,14 +249,15 @@ Avoid `/tmp` if the environment may be sandboxed or ephemeral.
 - Include a brief playful phrase in the summary when the title stays straight,
   or keep the summary mostly straight when the title already carries the wink.
 - Do not hide missing tests or known issues behind humor.
-- For risky, sensitive, or user-impacting changes, keep the humor understated,
-  but do not remove it entirely.
+- For risky, sensitive, or user-impacting changes, keep the humor understated
+  and feel free to skip it entirely if that serves clarity better.
 
 Examples of good lighter-touch titles:
 
 - `docs: add gh skill install guidance without the side quest 🗺️`
 - `refactor(ci): trim release wiring before it grows a second head`
 - `docs(readme): clarify local setup before the yak gets involved`
+- `docs: tune PR copy so release notes keep their tie on`
 
 Examples of good lighter-touch summary lines:
 
@@ -269,6 +279,8 @@ Examples of understated humor for serious changes:
 - `security: rotate leaked development credentials`
   Summary: `Replace exposed credentials and close the window before it becomes`
   `a skylight.`
+
+If the wording starts reading like stand-up material, pull it back.
 
 ## Output Expectations
 
