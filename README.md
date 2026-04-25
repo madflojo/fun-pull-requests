@@ -31,20 +31,26 @@ The main prompt lives at `skills/fun-pull-requests/SKILL.md`.
 
 ## Installing the skill
 
-Primary path: install from GitHub CLI with `gh skill install`.
+Install with GitHub CLI:
 
 ```bash
 gh skill install madflojo/fun-pull-requests
 ```
 
-Optional: pin to a tag or commit for reproducible installs:
+Install with `npx`:
+
+```bash
+npx skills add -g -y madflojo/fun-pull-requests
+```
+
+Optional: pin the GitHub CLI install to a tag or commit for reproducible installs:
 
 ```bash
 gh skill install madflojo/fun-pull-requests@v1.0.0
 gh skill install madflojo/fun-pull-requests@<commit-sha>
 ```
 
-Fallback path: manually copy `skills/fun-pull-requests/` into either:
+Manual fallback: copy `skills/fun-pull-requests/` into either:
 
 - `.agents/skills/` in a repository
 - `~/.agents/skills/` for a user-level install
