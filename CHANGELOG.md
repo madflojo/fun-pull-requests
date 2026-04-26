@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/madflojo/fun-pull-requests/compare/v1.1.0...v1.1.1) (2026-04-26)
+
+
+### Documentation
+
+* add npx install path ([4680cd5](https://github.com/madflojo/fun-pull-requests/commit/4680cd55c751d58ff23fb873969b628f0c8f4a8a))
+* add npx install path without demoting gh ([827027c](https://github.com/madflojo/fun-pull-requests/commit/827027c04ddbf2f00d1c60602a9ffb2e3f767da7))
+
 ## [1.1.0](https://github.com/madflojo/fun-pull-requests/compare/v1.0.0...v1.1.0) (2026-04-25)
 
 
